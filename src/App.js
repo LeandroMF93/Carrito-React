@@ -1,23 +1,24 @@
-import React from 'react'
+
 import './App.css';
-import Logo from './components/Logo/logo';
-import Navbar from './components/Navbar/Navbar';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Navbar from './components/Navbar/Navbar'
+
 
 function App() {
   return (
     <div className="App">
-      <header className='App-header'>
-        <Logo/>
-        <Navbar/>
-      </header>
-
-      <body>
-        <ItemListContainer className="homeTitle" greeting='Bienvenido a Pizzeria Rosendo'/>
-      </body>
-    </div>
   
-
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />}/>
+          <Route path='/category/:categoryId'element={<ItemListContainer />}/>
+          <Route path='/detail/:productId' element={<ItemDetailContainer />} /> 
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

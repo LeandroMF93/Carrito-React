@@ -1,36 +1,16 @@
-import './Navbar.css'
+import { Link } from "react-router-dom"
 
-import Button from '../Button/Button'
-/* import Logo from '../Logo/logo' */
-import CartWidget from '../CartWidget/CartWidget'
-
-const Navbar = (props) => {
-    console.log(props)
-
-    const handleOnClick = () => {
-        alert('hice click')
-    }
-    
-    const handleOnClick2 = () => {
-        alert('hice otro click')
-    }
-
-const handleOnClick3 = () => {
-        alert('hice otro click')
-    }
-
+const Navbar =() => {
 
     return (
-        <nav className='navbar'>
-            <section className='btnNavbar'>
-                <Button className="link" colorText='blue' func={handleOnClick}>Inicio</Button>
-                <Button colorText='blue' func={handleOnClick2}>Nuestras Pizzas</Button>
-                <Button colorText='blue' func={handleOnClick3}>Contacto</Button>
-            </section>
-            <section>
-                <CartWidget/>
-            </section>
-        </nav>
+    <nav>
+        <h1>Ecommerce</h1>
+        <div>
+            <Link to= '/'>Ver todo</Link>
+            <Link to= '/category/tshirt'> Pizzas</Link>
+            <Link to= '/category/Mujer'> especial</Link>
+        </div>
+    </nav>
     )
 }
 
